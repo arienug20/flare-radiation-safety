@@ -22,11 +22,13 @@ function ContourPlot({ results, type, title }: { results: ScenarioResults; type:
   const plotData = useMemo(() => {
     if (!Plot) return null;
 
-    const maxR = Math.max(
+    // Bounds checking: clamp values to prevent NaN/Infinity
+    const clampVal = (v: number, min: number, max: number) => Math.max(min, Math.min(max, isFinite(v) ? v : 0));
+    const maxR = clampVal(Math.max(
       radiation.safeRadii.personnel_1_6 || 100,
       noise.safeRadii.residential_55 || 200,
       150
-    ) * 1.5;
+    ) * 1.5, 10, 10000);
 
     const gridSize = 80;
     const x: number[] = [];
@@ -43,8 +45,10 @@ function ContourPlot({ results, type, title }: { results: ScenarioResults; type:
 
         let val = 0;
         if (type === 'radiation') {
-          const R = Math.sqrt(dist * dist + radiation.flameLength * radiation.flameLength / 4);
-          val = R > 0 ? (radiation.heatRelease * 0.2) / (4 * Math.PI * R * R) : 0;
+          const safeHeatRelease = isFinite(radiation.heatRelease) && radiation.heatRelease > 0 ? radiation.heatRelease : 0;
+          const safeFlameLength = isFinite(radiation.flameLength) && radiation.flameLength > 0 ? radiation.flameLength : 1;
+          const R = Math.sqrt(dist * dist + safeFlameLength * safeFlameLength / 4);
+          val = R > 0 ? (clampVal(safeHeatRelease, 0, 1e9) * 0.2) / (4 * Math.PI * R * R) : 0;
         } else if (type === 'noise') {
           if (dist > 0) {
             val = noise.sourceSPL - 20 * Math.log10(dist) - 11 - 0.005 * dist;
@@ -52,14 +56,13 @@ function ContourPlot({ results, type, title }: { results: ScenarioResults; type:
             val = noise.sourceSPL;
           }
         } else if (dispersion) {
-          // Simplified Gaussian plume contour
           const sigmaY = 0.08 * dist / Math.sqrt(1 + 0.0001 * dist);
           const sigmaZ = 0.06 * dist / Math.sqrt(1 + 0.0015 * dist);
           if (dist > 10 && sigmaY > 0 && sigmaZ > 0) {
             val = (1 / (Math.PI * sigmaY * sigmaZ * 5)) * Math.exp(-py * py / (2 * sigmaY * sigmaY)) * Math.exp(-30 * 30 / (2 * sigmaZ * sigmaZ)) * 1e6;
           }
         }
-        row.push(val);
+        row.push(clampVal(val, 0, 1e9));
 
         if (i === 0) x.push(px);
       }

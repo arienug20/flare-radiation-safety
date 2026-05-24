@@ -51,7 +51,7 @@ const createNewProject = (name: string, location: string, client: string): Proje
 export const useProjectStore = create<ProjectStore>((set, get) => ({
   project: null,
   recentProjects: [],
-  darkMode: true,
+  darkMode: typeof window !== 'undefined' ? (localStorage.getItem('flare-dark-mode') !== 'false') : true,
   sidebarOpen: true,
   activeTab: 'input',
   units: 'SI',
@@ -107,7 +107,11 @@ export const useProjectStore = create<ProjectStore>((set, get) => ({
     if (!s.project) return s;
     return { project: { ...s.project, receptorPoints: s.project.receptorPoints.map(r => r.id === id ? { ...r, ...updates } : r), updatedAt: new Date().toISOString() } };
   }),
-  toggleDarkMode: () => set(s => ({ darkMode: !s.darkMode })),
+  toggleDarkMode: () => set(s => {
+    const next = !s.darkMode;
+    if (typeof window !== 'undefined') localStorage.setItem('flare-dark-mode', String(next));
+    return { darkMode: next };
+  }),
   toggleSidebar: () => set(s => ({ sidebarOpen: !s.sidebarOpen })),
   setUnits: (u) => set({ units: u }),
   setActiveTab: (t) => set({ activeTab: t }),
@@ -128,9 +132,24 @@ export const useProjectStore = create<ProjectStore>((set, get) => ({
   },
   loadProject: (data) => {
     try {
-      const project = JSON.parse(data) as Project;
+      const parsed = JSON.parse(data);
+      // Validate minimal schema
+      if (!parsed || typeof parsed !== 'object' || !Array.isArray(parsed.scenarios) || typeof parsed.name !== 'string') {
+        alert('Invalid project file: missing required fields.');
+        return;
+      }
+      // Validate each scenario has required fields
+      for (const sc of parsed.scenarios) {
+        if (typeof sc.flowRate !== 'number' || typeof sc.stackHeight !== 'number') {
+          alert('Invalid project file: scenario missing required fields.');
+          return;
+        }
+      }
+      const project = parsed as Project;
       set({ project, activeScenarioId: project.scenarios[0]?.id || '' });
-    } catch {}
+    } catch (e) {
+      alert('Failed to load project: invalid JSON format.');
+    }
   },
   exportProject: () => {
     const { project } = get();
