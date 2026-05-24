@@ -32,6 +32,7 @@ interface ProjectStore {
 
 const createNewProject = (name: string, location: string, client: string): Project => {
   const defaultScenario = createDefaultScenario('normal');
+  const scenarioId = crypto.randomUUID();
   return {
     id: crypto.randomUUID(),
     name, location, client,
@@ -40,11 +41,11 @@ const createNewProject = (name: string, location: string, client: string): Proje
     units: 'SI',
     scenarios: [{
       ...defaultScenario,
-      id: crypto.randomUUID(),
+      id: scenarioId,
       results: undefined,
     } as Scenario],
     receptorPoints: [],
-    activeScenarioId: '',
+    activeScenarioId: scenarioId,
   };
 };
 

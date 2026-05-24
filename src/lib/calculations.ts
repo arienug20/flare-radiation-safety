@@ -88,7 +88,6 @@ export function calculateThermalRadiation(params: {
 
   // Speed of sound approximation for hydrocarbons
   const k = 1.3; // approximate ratio of specific heats
-  const R_gas = 8314 / calculateMW([]); // use a fallback
   const speedOfSound = Math.sqrt(k * 287 * T_actual * (fluidTemperature + 273.15) / 273.15);
   const gasVelocity = machNumber * speedOfSound;
 
