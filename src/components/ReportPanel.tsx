@@ -8,14 +8,19 @@ export default function ReportPanel() {
   const scenario = project?.scenarios.find(s => s.id === activeScenarioId);
   const results = scenario?.results;
 
-  const formatN = (n: number | undefined, d = 1) => n !== undefined && isFinite(n) ? n.toFixed(d) : '—';
+  const formatN = (n: number | undefined, d = 1) => {
+    if (n === undefined || !isFinite(n)) return '—';
+    return n.toFixed(d);
+  };
 
   const generateCSV = () => {
     if (!results) return;
     const rows = [['Distance (m)', 'Radiation (kW/m²)', 'Noise (dBA)']];
     const len = Math.min(results.radiation.distances.length, results.noise.distances.length);
     for (let i = 0; i < len; i++) {
-      rows.push([results.radiation.distances[i].toString(), results.radiation.intensities[i].toFixed(3), results.noise.splValues[i].toFixed(1)]);
+      const rad = isFinite(results.radiation.intensities[i]) ? results.radiation.intensities[i].toFixed(3) : '—';
+      const noise = isFinite(results.noise.splValues[i]) ? results.noise.splValues[i].toFixed(1) : '—';
+      rows.push([results.radiation.distances[i].toString(), rad, noise]);
     }
     const csv = rows.map(r => r.join(',')).join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
