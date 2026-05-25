@@ -89,7 +89,7 @@ Standards: API 521, ISO 9613
 
   if (!results) {
     return (
-      <div className="flex-1 flex items-center justify-center text-gray-500 dark:text-gray-400">
+      <div className="flex-1 flex items-center justify-center text-gray-500">
         <div className="text-center">
           <div className="text-4xl mb-3">📄</div>
           <p>Run calculations first to generate reports.</p>
@@ -100,7 +100,7 @@ Standards: API 521, ISO 9613
 
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4">
-      <h2 className="text-lg font-bold dark:text-white">Report Generation</h2>
+      <h2 className="text-lg font-bold text-gray-800">Report Generation</h2>
       <div className="flex gap-3">
         <button onClick={generatePDFContent} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
           📄 Download Report (TXT)
@@ -109,9 +109,9 @@ Standards: API 521, ISO 9613
           📊 Export Data (CSV)
         </button>
       </div>
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-        <h3 className="font-semibold dark:text-white mb-2">Report Preview</h3>
-        <pre className="text-xs bg-gray-50 dark:bg-gray-900 p-4 rounded overflow-x-auto dark:text-gray-300 whitespace-pre-wrap">
+      <div className="bg-white rounded-lg shadow p-4">
+        <h3 className="font-semibold text-gray-800 mb-2">Report Preview</h3>
+        <pre className="text-xs bg-gray-50 p-4 rounded overflow-x-auto text-gray-700 whitespace-pre-wrap">
 {`FLARE RADIATION, NOISE & SAFETY RADIUS REPORT
 ==============================================
 

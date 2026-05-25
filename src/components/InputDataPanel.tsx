@@ -29,10 +29,10 @@ export default function InputDataPanel() {
 
   if (!project || !scenario) {
     return (
-      <div className="flex-1 flex items-center justify-center text-gray-500 dark:text-gray-400">
+      <div className="flex-1 flex items-center justify-center text-gray-600">
         <div className="text-center">
           <div className="text-6xl mb-4">🔥</div>
-          <h2 className="text-xl font-bold mb-2 dark:text-white">Flare Radiation & Safety</h2>
+          <h2 className="text-xl font-bold mb-2 text-gray-800">Flare Radiation & Safety</h2>
           <p>Create a new project or open an existing one to get started.</p>
         </div>
       </div>
@@ -65,19 +65,19 @@ export default function InputDataPanel() {
     addReceptor(rp);
   };
 
-  const inputClass = "w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-gray-900 dark:text-white";
-  const labelClass = "block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1";
+  const inputClass = "w-full px-2 py-1 text-sm border border-gray-300 rounded bg-white text-gray-900";
+  const labelClass = "block text-xs font-medium text-gray-600 mb-1";
 
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-6">
-      <h2 className="text-lg font-bold dark:text-white">Input Data — {scenario.name}</h2>
+      <h2 className="text-lg font-bold text-gray-800">Input Data — {scenario.name}</h2>
 
       {/* Gas Composition */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+      <div className="bg-white rounded-lg shadow p-4">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="font-semibold dark:text-white">🧪 Gas Composition (mol%)</h3>
+          <h3 className="font-semibold text-gray-800">🧪 Gas Composition (mol%)</h3>
           <div className="flex gap-2">
-            <select onChange={e => loadTemplate(e.target.value)} value="" className="text-xs border rounded px-2 py-1 dark:bg-gray-700 dark:text-white dark:border-gray-600">
+            <select onChange={e => loadTemplate(e.target.value)} value="" className="text-xs border rounded px-2 py-1 bg-white text-gray-800 border-gray-300">
               <option value="">Load Template...</option>
               {DEFAULT_TEMPLATES.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
             </select>
@@ -88,7 +88,7 @@ export default function InputDataPanel() {
                 const normalized = scenario.gasComposition.map(e => ({ ...e, molPercent: e.molPercent * factor }));
                 update('gasComposition', normalized);
               }
-            }} className="text-xs bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded" title="Normalize to 100%">
+            }} className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded" title="Normalize to 100%">
               Normalize
             </button>
           </div>
@@ -97,7 +97,7 @@ export default function InputDataPanel() {
           {GAS_COMPONENTS.map(comp => {
             const entry = scenario.gasComposition.find(e => e.componentId === comp.id);
             return (
-              <div key={comp.id} className="border dark:border-gray-600 rounded p-2">
+              <div key={comp.id} className="border border-gray-200 rounded p-2">
                 <label className={labelClass} title={`MW: ${comp.mw} g/mol, LHV: ${comp.lhv} MJ/Nm³`}>{comp.formula}</label>
                 <input
                   type="number"
@@ -114,41 +114,41 @@ export default function InputDataPanel() {
         </div>
         {gasProps && (
           <div className="mt-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 text-xs">
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">Total</span>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">Total</span>
               <div className={`font-bold ${Math.abs(gasProps.total - 100) > 0.1 ? 'text-red-600' : 'text-green-600'}`}>{gasProps.total.toFixed(1)}%</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">MW</span>
-              <div className="font-bold dark:text-white">{gasProps.mw.toFixed(2)} g/mol</div>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">MW</span>
+              <div className="font-bold text-gray-800">{gasProps.mw.toFixed(2)} g/mol</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">LHV</span>
-              <div className="font-bold dark:text-white">{gasProps.lhv.toFixed(2)} MJ/Nm³</div>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">LHV</span>
+              <div className="font-bold text-gray-800">{gasProps.lhv.toFixed(2)} MJ/Nm³</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">HHV</span>
-              <div className="font-bold dark:text-white">{gasProps.hhv.toFixed(2)} MJ/Nm³</div>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">HHV</span>
+              <div className="font-bold text-gray-800">{gasProps.hhv.toFixed(2)} MJ/Nm³</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">Density</span>
-              <div className="font-bold dark:text-white">{gasProps.density.toFixed(3)} kg/Nm³</div>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">Density</span>
+              <div className="font-bold text-gray-800">{gasProps.density.toFixed(3)} kg/Nm³</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">LFL</span>
-              <div className="font-bold dark:text-white">{gasProps.lfl.toFixed(1)}%</div>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">LFL</span>
+              <div className="font-bold text-gray-800">{gasProps.lfl.toFixed(1)}%</div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2">
-              <span className="text-gray-500 dark:text-gray-400">UFL</span>
-              <div className="font-bold dark:text-white">{gasProps.ufl.toFixed(1)}%</div>
+            <div className="bg-blue-50 rounded p-2">
+              <span className="text-gray-500">UFL</span>
+              <div className="font-bold text-gray-800">{gasProps.ufl.toFixed(1)}%</div>
             </div>
           </div>
         )}
       </div>
 
       {/* Flare Parameters */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-        <h3 className="font-semibold dark:text-white mb-3">🔥 Flare Parameters</h3>
+      <div className="bg-white rounded-lg shadow p-4">
+        <h3 className="font-semibold text-gray-800 mb-3">🔥 Flare Parameters</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
             <label className={labelClass} title="Mass flow rate of flare gas">Flow Rate (kg/hr)</label>
@@ -186,8 +186,8 @@ export default function InputDataPanel() {
       </div>
 
       {/* Atmospheric Conditions */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-        <h3 className="font-semibold dark:text-white mb-3">🌤️ Atmospheric Conditions</h3>
+      <div className="bg-white rounded-lg shadow p-4">
+        <h3 className="font-semibold text-gray-800 mb-3">🌤️ Atmospheric Conditions</h3>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div>
             <label className={labelClass} title="Design wind speed">Wind Speed (m/s)</label>
@@ -215,16 +215,16 @@ export default function InputDataPanel() {
       </div>
 
       {/* Receptor Points */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+      <div className="bg-white rounded-lg shadow p-4">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="font-semibold dark:text-white">📍 Receptor Points</h3>
+          <h3 className="font-semibold text-gray-800">📍 Receptor Points</h3>
           <button onClick={addNewReceptor} className="text-xs bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">+ Add Receptor</button>
         </div>
         {project.receptorPoints.length > 0 ? (
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-sm text-gray-700">
               <thead>
-                <tr className="text-left text-xs text-gray-500 dark:text-gray-400 border-b dark:border-gray-600">
+                <tr className="text-left text-xs text-gray-500 border-b">
                   <th className="pb-2">Name</th>
                   <th className="pb-2">X (m)</th>
                   <th className="pb-2">Y (m)</th>
@@ -235,7 +235,7 @@ export default function InputDataPanel() {
               </thead>
               <tbody>
                 {project.receptorPoints.map(rp => (
-                  <tr key={rp.id} className="border-b dark:border-gray-700">
+                  <tr key={rp.id} className="border-b border-gray-200">
                     <td className="py-1"><input type="text" value={rp.name} onChange={e => updateReceptor(rp.id, { name: e.target.value })} className={inputClass} /></td>
                     <td className="py-1"><input type="number" step="1" value={rp.x} onChange={e => updateReceptor(rp.id, { x: parseFloat(e.target.value) || 0 })} className={inputClass} /></td>
                     <td className="py-1"><input type="number" step="1" value={rp.y} onChange={e => updateReceptor(rp.id, { y: parseFloat(e.target.value) || 0 })} className={inputClass} /></td>
@@ -255,7 +255,7 @@ export default function InputDataPanel() {
             </table>
           </div>
         ) : (
-          <p className="text-xs text-gray-400">No receptor points added yet. Click &quot;Add Receptor&quot; to add points of interest.</p>
+          <p className="text-xs text-gray-500">No receptor points added yet. Click "Add Receptor" to add points of interest.</p>
         )}
       </div>
     </div>

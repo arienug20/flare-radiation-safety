@@ -13,7 +13,7 @@ export default function ComparisonPanel() {
 
   if (resultsList.length < 2) {
     return (
-      <div className="flex-1 flex items-center justify-center text-gray-500 dark:text-gray-400">
+      <div className="flex-1 flex items-center justify-center text-gray-500">
         <div className="text-center">
           <div className="text-4xl mb-3">⚖️</div>
           <p>Add at least 2 scenarios with results to compare.</p>
@@ -22,7 +22,6 @@ export default function ComparisonPanel() {
     );
   }
 
-  // Find worst case
   const worstCaseIdx = resultsList.reduce((worst, curr, idx) => {
     const worstR = resultsList[worst].results?.safeRadiusSummary.overallSafeRadius || 0;
     const currR = curr.results?.safeRadiusSummary.overallSafeRadius || 0;
@@ -46,17 +45,17 @@ export default function ComparisonPanel() {
 
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4">
-      <h2 className="text-lg font-bold dark:text-white">Scenario Comparison</h2>
-      <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded p-3 text-sm dark:text-yellow-200">
+      <h2 className="text-lg font-bold text-gray-800">Scenario Comparison</h2>
+      <div className="bg-yellow-50 rounded p-3 text-sm text-yellow-800">
         🚨 <strong>Worst Case:</strong> {resultsList[worstCaseIdx].scenario.name} — Overall safe radius: {formatN(resultsList[worstCaseIdx].results?.safeRadiusSummary.overallSafeRadius)} m
       </div>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm border dark:border-gray-600">
+        <table className="w-full text-sm border border-gray-300 text-gray-700">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-700">
-              <th className="px-3 py-2 text-left dark:text-white">Parameter</th>
+            <tr className="bg-gray-100">
+              <th className="px-3 py-2 text-left text-gray-800">Parameter</th>
               {resultsList.map((r, i) => (
-                <th key={i} className={`px-3 py-2 text-center dark:text-white ${i === worstCaseIdx ? 'bg-red-50 dark:bg-red-900/30' : ''}`}>
+                <th key={i} className={`px-3 py-2 text-center text-gray-800 ${i === worstCaseIdx ? 'bg-red-50' : ''}`}>
                   {r.scenario.name}
                   {i === worstCaseIdx && ' ⚠️'}
                 </th>
@@ -68,10 +67,10 @@ export default function ComparisonPanel() {
               const vals = resultsList.map(r => row.get(r.results));
               const maxVal = Math.max(...vals);
               return (
-                <tr key={i} className="border-b dark:border-gray-700">
-                  <td className="px-3 py-2 dark:text-white font-medium">{row.label}</td>
+                <tr key={i} className="border-b border-gray-200">
+                  <td className="px-3 py-2 font-medium text-gray-800">{row.label}</td>
                   {vals.map((v, j) => (
-                    <td key={j} className={`px-3 py-2 text-center font-mono ${v === maxVal && i > 2 ? 'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-300 font-bold' : 'dark:text-white'}`}>
+                    <td key={j} className={`px-3 py-2 text-center font-mono ${v === maxVal && i > 2 ? 'bg-red-50 text-red-700 font-bold' : 'text-gray-700'}`}>
                       {formatN(v)}
                     </td>
                   ))}

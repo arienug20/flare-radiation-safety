@@ -61,13 +61,13 @@ export default function Toolbar() {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-2">
+    <div className="bg-white border-b border-gray-200 px-4 py-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1">
           <button onClick={handleNew} className="px-3 py-1.5 text-sm bg-blue-600 text-white rounded hover:bg-blue-700" title="New Project">📄 New</button>
-          <button onClick={handleOpen} className="px-3 py-1.5 text-sm bg-gray-200 dark:bg-gray-700 dark:text-white rounded hover:bg-gray-300 dark:hover:bg-gray-600" title="Open Project">📂 Open</button>
-          <button onClick={handleSave} className="px-3 py-1.5 text-sm bg-gray-200 dark:bg-gray-700 dark:text-white rounded hover:bg-gray-300 dark:hover:bg-gray-600" title="Save Project">💾 Save</button>
-          <button onClick={handleExport} className="px-3 py-1.5 text-sm bg-gray-200 dark:bg-gray-700 dark:text-white rounded hover:bg-gray-300 dark:hover:bg-gray-600" title="Export Project">📤 Export</button>
+          <button onClick={handleOpen} className="px-3 py-1.5 text-sm bg-gray-200 text-gray-800 rounded hover:bg-gray-300" title="Open Project">📂 Open</button>
+          <button onClick={handleSave} className="px-3 py-1.5 text-sm bg-gray-200 text-gray-800 rounded hover:bg-gray-300" title="Save Project">💾 Save</button>
+          <button onClick={handleExport} className="px-3 py-1.5 text-sm bg-gray-200 text-gray-800 rounded hover:bg-gray-300" title="Export Project">📤 Export</button>
           <input type="file" ref={fileRef} className="hidden" accept=".json" onChange={handleFile} />
         </div>
         <div className="flex items-center gap-1">
@@ -76,7 +76,7 @@ export default function Toolbar() {
               key={t.id}
               onClick={() => setActiveTab(t.id)}
               title={t.tooltip}
-              className={`px-3 py-1.5 text-sm rounded ${activeTab === t.id ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600'}`}
+              className={`px-3 py-1.5 text-sm rounded ${activeTab === t.id ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
             >
               {t.label}
             </button>

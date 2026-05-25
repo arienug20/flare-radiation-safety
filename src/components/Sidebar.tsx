@@ -21,26 +21,26 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="w-64 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col h-full overflow-y-auto">
-      <div className="p-3 border-b border-gray-200 dark:border-gray-700">
+    <div className="w-64 bg-gray-50 border-r border-gray-200 flex flex-col h-full overflow-y-auto">
+      <div className="p-3 border-b border-gray-200">
         <div className="flex justify-between items-center mb-2">
-          <span className="font-bold text-sm dark:text-white">Project Tree</span>
-          <button onClick={toggleSidebar} className="text-gray-500 hover:text-gray-700 dark:text-gray-400">◀</button>
+          <span className="font-bold text-sm text-gray-800">Project Tree</span>
+          <button onClick={toggleSidebar} className="text-gray-500 hover:text-gray-700">◀</button>
         </div>
         {project && (
-          <div className="text-xs text-gray-600 dark:text-gray-400">
-            <div className="font-semibold dark:text-gray-200">{project.name}</div>
+          <div className="text-xs text-gray-600">
+            <div className="font-semibold text-gray-800">{project.name}</div>
             <div>{project.location}</div>
             <div>{project.client}</div>
           </div>
         )}
       </div>
 
-      <div className="p-3 border-b border-gray-200 dark:border-gray-700">
+      <div className="p-3 border-b border-gray-200">
         <div className="flex justify-between items-center mb-2">
-          <span className="font-semibold text-xs dark:text-white">Scenarios</span>
+          <span className="font-semibold text-xs text-gray-800">Scenarios</span>
           <select
-            className="text-xs border rounded px-1 py-0.5 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+            className="text-xs border rounded px-1 py-0.5 bg-white text-gray-800 border-gray-300"
             onChange={(e) => addScenario(e.target.value)}
             value=""
           >
@@ -51,7 +51,7 @@ export default function Sidebar() {
         {project?.scenarios.map(sc => (
           <div
             key={sc.id}
-            className={`flex items-center justify-between px-2 py-1.5 mb-1 rounded text-xs cursor-pointer ${sc.id === activeScenarioId ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200' : 'hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-gray-300'}`}
+            className={`flex items-center justify-between px-2 py-1.5 mb-1 rounded text-xs cursor-pointer ${sc.id === activeScenarioId ? 'bg-blue-100 text-blue-800' : 'hover:bg-gray-200 text-gray-700'}`}
             onClick={() => setActiveScenario(sc.id)}
           >
             <span className="truncate flex-1">{sc.name}</span>
@@ -63,27 +63,27 @@ export default function Sidebar() {
         ))}
       </div>
 
-      <div className="p-3 border-b border-gray-200 dark:border-gray-700">
-        <span className="font-semibold text-xs dark:text-white block mb-2">Receptors</span>
+      <div className="p-3 border-b border-gray-200">
+        <span className="font-semibold text-xs text-gray-800 block mb-2">Receptors</span>
         {project?.receptorPoints.map(rp => (
-          <div key={rp.id} className="text-xs py-1 dark:text-gray-400">
+          <div key={rp.id} className="text-xs py-1 text-gray-600">
             {rp.name} ({rp.x}m, {rp.y}m)
           </div>
         ))}
-        {(!project?.receptorPoints.length) && <div className="text-xs text-gray-400">No receptors added</div>}
+        {(!project?.receptorPoints.length) && <div className="text-xs text-gray-500">No receptors added</div>}
       </div>
 
-      <div className="mt-auto p-3 border-t border-gray-200 dark:border-gray-700">
+      <div className="mt-auto p-3 border-t border-gray-200">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs dark:text-gray-400">Theme</span>
-          <button onClick={toggleDarkMode} className="text-lg">{darkMode ? '☀️' : '🌙'}</button>
+          <span className="text-xs text-gray-500">Theme</span>
+          <button onClick={toggleDarkMode} className="text-lg">🌙</button>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-xs dark:text-gray-400">Units</span>
+          <span className="text-xs text-gray-500">Units</span>
           <select
             value={units}
             onChange={e => setUnits(e.target.value as 'SI' | 'Imperial')}
-            className="text-xs border rounded px-1 py-0.5 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+            className="text-xs border rounded px-1 py-0.5 bg-white text-gray-800 border-gray-300"
           >
             <option value="SI">SI (Metric)</option>
             <option value="Imperial">Imperial</option>

@@ -10,10 +10,9 @@ import ComparisonPanel from '@/components/ComparisonPanel';
 import ReportPanel from '@/components/ReportPanel';
 
 export default function Home() {
-  const { darkMode, activeTab, project, setProject } = useProjectStore();
+  const { activeTab, project, setProject } = useProjectStore();
 
   useEffect(() => {
-    // Load recent projects from localStorage
     try {
       const saved = localStorage.getItem('flare-recent-projects');
       if (saved) {
@@ -28,7 +27,6 @@ export default function Home() {
     } catch {}
   }, [setProject]);
 
-  // Auto-save every 2 minutes
   useEffect(() => {
     const interval = setInterval(() => {
       if (project) {
@@ -39,10 +37,6 @@ export default function Home() {
     }, 120000);
     return () => clearInterval(interval);
   }, [project]);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
-  }, [darkMode]);
 
   const renderContent = () => {
     switch (activeTab) {
@@ -56,11 +50,11 @@ export default function Home() {
   };
 
   return (
-    <div className={`h-screen flex flex-col ${darkMode ? 'dark' : ''}`}>
+    <div className="h-screen flex flex-col">
       <Toolbar />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-        <main className={`flex-1 overflow-hidden flex ${darkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
+        <main className="flex-1 overflow-hidden flex bg-gray-100">
           {renderContent()}
         </main>
       </div>

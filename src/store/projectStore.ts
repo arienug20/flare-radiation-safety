@@ -52,7 +52,7 @@ const createNewProject = (name: string, location: string, client: string): Proje
 export const useProjectStore = create<ProjectStore>((set, get) => ({
   project: null,
   recentProjects: [],
-  darkMode: true,
+  darkMode: false,
   sidebarOpen: true,
   activeTab: 'input',
   units: 'SI',
