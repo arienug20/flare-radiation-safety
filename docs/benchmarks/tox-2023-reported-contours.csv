@@ -1,0 +1,58 @@
+document_id,revision,case_id,species,threshold_ppm_as_reported,criterion_label_as_reported,weather_label,wind_speed_ms,stability_class,reported_max_downwind_extent_any_height_m,reported_min_cloud_height_m,reported_max_cloud_height_m,summary_pages,observed_plot_page,observed_averaging_basis,observed_averaging_time_s,data_status,notes
+TOX-10-P0-SR-001,0,1,SO2,2,TLV-STEL,10/D,10,D,253,33,67,47-48,18,Toxic,600,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,2,TLV-STEL,3.3/D,3.3,D,286,36,127,47-48,18,Toxic,600,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,2,TLV-STEL,2/F,2,F,367,37,135,47-48,18,Toxic,600,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii. Table 18 says zmax=135 m; page 18 narrative says 119 m.
+TOX-10-P0-SR-001,0,1,SO2,5,TLV-TWA,10/D,10,D,152,33,59,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,5,TLV-TWA,3.3/D,3.3,D,146,36,97,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,5,TLV-TWA,2/F,2,F,161,37,95,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,100,TLV-IDLH,10/D,10,D,18,35,42,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,100,TLV-IDLH,3.3/D,3.3,D,11,37,49,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,1,SO2,100,TLV-IDLH,2/F,2,F,10,37,50,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,2,TLV-STEL,10/D,10,D,455,28,76,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,2,TLV-STEL,3.3/D,3.3,D,539,35,162,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,2,TLV-STEL,2/F,2,F,902,36,134,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,5,TLV-TWA,10/D,10,D,249,32,65,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,5,TLV-TWA,3.3/D,3.3,D,286,36,123,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,5,TLV-TWA,2/F,2,F,363,36,117,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,100,TLV-IDLH,10/D,10,D,43,34,46,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,100,TLV-IDLH,3.3/D,3.3,D,28,37,58,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,SO2,100,TLV-IDLH,2/F,2,F,25,37,57,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,2,TLV-STEL,10/D,10,D,174,33,54,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,2,TLV-STEL,3.3/D,3.3,D,212,34,92,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,2,TLV-STEL,2/F,2,F,237,35,91,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,5,TLV-TWA,10/D,10,D,106,34,50,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,5,TLV-TWA,3.3/D,3.3,D,111,35,74,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,5,TLV-TWA,2/F,2,F,113,33,73,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,100,TLV-IDLH,10/D,10,D,15,35,40,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,100,TLV-IDLH,3.3/D,3.3,D,9,36,44,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,3,SO2,100,TLV-IDLH,2/F,2,F,8,36,44,47-48,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,10,TLV-STEL,10/D,10,D,114,29,41,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,10,TLV-STEL,3.3/D,3.3,D,144,10,40,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,10,TLV-STEL,2/F,2,F,284,0,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,15,TLV-TWA,10/D,10,D,92,30,40,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,15,TLV-TWA,3.3/D,3.3,D,121,14,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,15,TLV-TWA,2/F,2,F,175,6,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,100,TLV-IDLH,10/D,10,D,38,33,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,100,TLV-IDLH,3.3/D,3.3,D,43,27,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,4,H2S,100,TLV-IDLH,2/F,2,F,38,27,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,5,H2S,10,TLV-STEL,10/D,10,D,307,20,47,49,38,Flammable,18.75,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii. Averaging selection requires review for toxic comparison.
+TOX-10-P0-SR-001,0,5,H2S,10,TLV-STEL,3.3/D,3.3,D,523,0,45,49,38,Flammable,18.75,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii. Averaging selection requires review for toxic comparison.
+TOX-10-P0-SR-001,0,5,H2S,10,TLV-STEL,2/F,2,F,1897,0,39,49,38,Flammable,18.75,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii. Averaging selection requires review for toxic comparison.
+TOX-10-P0-SR-001,0,5,H2S,15,TLV-TWA,10/D,10,D,244,23,45,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,5,H2S,15,TLV-TWA,3.3/D,3.3,D,382,0,41,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,5,H2S,15,TLV-TWA,2/F,2,F,1224,0,40,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,5,H2S,100,TLV-IDLH,10/D,10,D,86,30,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,5,H2S,100,TLV-IDLH,3.3/D,3.3,D,81,20,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,5,H2S,100,TLV-IDLH,2/F,2,F,76,18,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,10,TLV-STEL,10/D,10,D,74,32,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,10,TLV-STEL,3.3/D,3.3,D,107,21,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,10,TLV-STEL,2/F,2,F,138,18,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,15,TLV-TWA,10/D,10,D,60,33,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,15,TLV-TWA,3.3/D,3.3,D,91,23,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,15,TLV-TWA,2/F,2,F,107,22,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,100,TLV-IDLH,10/D,10,D,36,35,38,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,100,TLV-IDLH,3.3/D,3.3,D,32,31,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,6,H2S,100,TLV-IDLH,2/F,2,F,28,31,39,49,,,,reported_requires_reconciliation,Input and model settings require reconciliation; extents are not ground-level safe radii.
+TOX-10-P0-SR-001,0,2,H2S,10,TLV-STEL,10/D,10,D,0.34,36.61,36.77,48,,,,reported_requires_reconciliation,Near-source output requires checking selected model and resolution; not a ground-level radius.
+TOX-10-P0-SR-001,0,2,H2S,10,TLV-STEL,3.3/D,3.3,D,0.65,36.6,36.95,48,,,,reported_requires_reconciliation,Near-source output requires checking selected model and resolution; not a ground-level radius.
+TOX-10-P0-SR-001,0,2,H2S,10,TLV-STEL,2/F,2,F,0.69,36.6,36.97,48,,,,reported_requires_reconciliation,Near-source output requires checking selected model and resolution; not a ground-level radius.

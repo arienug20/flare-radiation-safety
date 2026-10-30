@@ -1,0 +1,62 @@
+{
+  "fixtureVersion": 1,
+  "caseId": "analytic-point-source-known-geometry-001",
+  "kind": "synthetic_analytic_reference",
+  "description": "Acuan persamaan dasar untuk unit, kondisi tip, energi, radiasi dan contour. Bukan benchmark PHAST atau prediksi geometri flare. Struktur ini adalah fixture spesifikasi, bukan schema proyek final.",
+  "inputs": {
+    "gas": {
+      "componentId": "CH4",
+      "moleFraction": 1,
+      "molecularWeightKgMol": 0.016043,
+      "lhvJkg": 50000000,
+      "compressibilityFactor": 1,
+      "gamma": 1.3
+    },
+    "tip": {
+      "massFlowKgS": 1,
+      "temperatureK": 313.15,
+      "pressurePaAbs": 101325,
+      "effectiveDiameterM": 0.5
+    },
+    "combustion": {
+      "energyEfficiency": 0.98,
+      "radiativeFraction": 0.2,
+      "radiativeFractionBasis": "combusted_lhv"
+    },
+    "radiation": {
+      "model": "isotropic_point_source",
+      "geometryMode": "specified_center",
+      "centerM": { "x": 10, "y": 0, "z": 20 },
+      "atmosphericTransmission": 1,
+      "receiverOrientation": "normal_to_source",
+      "receptorM": { "x": 100, "y": 0, "z": 0 },
+      "contourPlaneZM": 0,
+      "contourThresholdWm2": 1580,
+      "envelopeOriginM": { "x": 0, "y": 0 }
+    }
+  },
+  "constants": {
+    "universalGasConstantJmolK": 8.31446261815324
+  },
+  "expected": {
+    "densityKgM3": 0.6243319994870823,
+    "actualVolumeFlowM3S": 1.6017119110049562,
+    "effectiveAreaM2": 0.19634954084936207,
+    "tipVelocityMS": 8.157451777459352,
+    "idealSoundSpeedMS": 459.3272223560785,
+    "mach": 0.017759565252014504,
+    "availableHeatW": 50000000,
+    "combustedHeatW": 49000000,
+    "radiatedHeatW": 9800000,
+    "receptorFluxWm2": 91.74814366473967,
+    "maximumGroundFluxWm2": 1949.648052875718,
+    "maximumGroundPositionM": { "x": 10, "y": 0, "z": 0 },
+    "contourCenterM": { "x": 10, "y": 0 },
+    "horizontalContourRadiusM": 9.673767908015801,
+    "maximumHorizontalExtentFromBaseM": 19.6737679080158
+  },
+  "proposedArithmeticComparison": {
+    "relativeTolerance": 0.000001,
+    "note": "Untuk operasi analitik fixture ini. Pilih toleransi absolut per besaran bila nilai acuan mendekati nol. Toleransi ini tidak berlaku otomatis pada korelasi empiris atau benchmark lintas model."
+  }
+}
